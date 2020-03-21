@@ -103,11 +103,9 @@ npm run dev
 
 
 ##  API Documentation
-
-<Auth>
     
 ### 1. Auth
-#### Register
+#### Register ####
 
 Request
 | Name           | Method | Descriptions                                          |
@@ -115,7 +113,7 @@ Request
 | /auth/register |  POST  | Register a new user and send OTP to new user's email. |
 
 
-#### Login
+#### Login ####
 
 Request
 | Name        | Method | Descriptions |
@@ -123,7 +121,7 @@ Request
 | /auth/login |  POST  | User Login   |
 
 
-#### Verify OTP
+#### Verify OTP ####
 
 Request
 | Name             | Method | Descriptions            |
@@ -131,14 +129,12 @@ Request
 | /auth/verify-otp |  POST  | Verify -digits OTP Code |
 
 
-#### Resend OTP
+#### Resend OTP ####
 
 Request
 | Name                    | Method | Descriptions                   |
 |-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
-
-</Auth>
 
 
 
