@@ -106,16 +106,14 @@ npm run dev
 
 #### Register
 
-**Request**
-
+Request
 | Name           | Method | Descriptions                                          |
 |----------------|--------|-------------------------------------------------------|
 | /auth/register |  POST  | Register a new user and send OTP to new user's email. |
 
 #### Login
 
-**Request**
-
+Request
 | Name        | Method | Descriptions |
 |-------------|--------|--------------|
 | /auth/login |  POST  | User Login   |
