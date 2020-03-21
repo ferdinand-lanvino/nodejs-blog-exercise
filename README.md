@@ -98,6 +98,20 @@ npm install
 1.  Find `.env.example` on root directory of this project.
 2.  Copy and paste `.env.example` and rename it to `.env`
 3.  Change the values to suit your environment.
+4.  SMTP Server needed for sending OTP, if you testing this API on localhost use setting below.
+
+
+```
+EMAIL_SMTP_HOST=smtp.ethereal.email
+EMAIL_SMTP_PORT=587
+EMAIL_SMTP_USERNAME=kiera94@ethereal.email
+EMAIL_SMTP_PASSWORD=r6DtQu9hrAczNzQ4gj
+EMAIL_SMTP_SECURE=false
+```
+
+> Notes
+Ethereal is a fake SMTP service used for testing purposes.
+
 
 
 ## How to run
