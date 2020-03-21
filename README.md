@@ -100,9 +100,13 @@ npm install
 npm run dev
 ```
 
+
+
 ##  API Documentation
 
+<details>
 ### Auth
+
 
 #### Register
 
@@ -134,6 +138,8 @@ Request
 | Name                    | Method | Descriptions                   |
 |-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
+
+</details>
 
 
 
