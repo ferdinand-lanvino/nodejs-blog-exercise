@@ -107,11 +107,12 @@ npm run dev
 ### 1. Auth
 #### Register ####
 
+```bash
 Request
 | Name           | Method | Descriptions                                          |
 |----------------|--------|-------------------------------------------------------|
 | /auth/register |  POST  | Register a new user and send OTP to new user's email. |
-
+```
 
 #### Login ####
 
