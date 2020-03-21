@@ -106,7 +106,7 @@ npm run dev
 
 <Auth>
     
-### Auth
+### 1. Auth
 #### Register
 
 Request
@@ -142,7 +142,7 @@ Request
 
 
 
-### Public
+### 2. Public
 #### Show All Post
 
 Request
@@ -160,7 +160,7 @@ Request
 
 
 
-### Post CRUD
+### 3. Post CRUD
 #### Post List
 
 Request
@@ -198,7 +198,7 @@ Request
 
 
 
-### Comment CRUD
+### 4. Comment CRUD
 #### Comment List
 
 Request
