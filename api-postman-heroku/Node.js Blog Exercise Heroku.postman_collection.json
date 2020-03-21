@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "420fb8d0-9398-4bb8-9f00-e57e1f6404a3",
+		"name": "Node.js Blog Exercise Heroku",
+		"description": "\nNode.js Blog Exercise\n\nRESTful API built with Node.js, Express.js, and MongoDB\n\nBy Ferdinand Lanvino",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Show All Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/public",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/public/:id/comments",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"public",
+								":id",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Public Blog Request, anyone can see all post and its comment.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aabb2038-13e2-45bb-a00e-db893afa5a21",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a8980b38-c296-4de2-b29c-627611639091",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Ferdinand",
+									"description": "Required Field",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Lanvino",
+									"description": "Required Field",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"description": "Required Field",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "frdnndvn106@gmail.com",
+									"description": "Required Field",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Input firstName, lastName, password and email"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "frdnndvn106@gmail.com",
+									"description": "Required Field",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"description": "Required Field",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login using registered email and password. If successful, your 'token' is generated"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "frdnndvn106@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "9901",
+									"description": "OTP that sent to email.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/auth/verify-otp",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify-otp"
+							]
+						},
+						"description": "Verify OTP sent to email."
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "frdnndvn106@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/auth/resend-verify-otp",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"resend-verify-otp"
+							]
+						},
+						"description": "Resend OTP to email."
+					},
+					"response": []
+				}
+			],
+			"description": "User authentication using JWT.\n\n1. Registering new user, input firstName, lastName, password and email using on Request Body (Register). OTP will be sent to email specified.\n2. Verify your OTP, input OTP on Request Body (Verify OTP)\n3. To resend OTP, input user's email.\n4. If user already verified, log in using email and password.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "10f1c2f3-f1e7-4c85-9cc0-c812b80effdd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "42313510-5363-4e91-b4a8-3ef7d10c6e91",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post CRUD",
+			"item": [
+				{
+					"name": "Post List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post"
+							]
+						},
+						"description": "Show all post created by authorized user."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Post Title 3",
+									"description": "Your Post Title",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Post Content 3",
+									"description": "Your Content Title",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post"
+							]
+						},
+						"description": "Add new post."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:id",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								}
+							]
+						},
+						"description": "View specific post created by authorized user."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Post Title 1 updated",
+									"description": "Your Updated Post Title",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Post Content 1 updated",
+									"description": "Your Updated Post Content",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:id",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								}
+							]
+						},
+						"description": "Update specific post created by authorized user."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:id",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Post ID"
+								}
+							]
+						},
+						"description": "Delete post created by authorized user."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comment CRUD",
+			"item": [
+				{
+					"name": "Comment List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:forPost/comments",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":forPost",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "forPost",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								}
+							]
+						},
+						"description": "Show all comment post by all user."
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Comment to Post 1",
+									"description": "Your Comment Content",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:forPost/comments",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":forPost",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "forPost",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								}
+							]
+						},
+						"description": "Add new comment."
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							}
+						],
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:forPost/comments/:id",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":forPost",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "forPost",
+									"value": "",
+									"description": "Post ID"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"description": "Comment ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTc1ZGMxNTNlNTExMTAwMTdkM2QzMjIiLCJmaXJzdE5hbWUiOiJGZXJkaW5hbmQiLCJsYXN0TmFtZSI6IkxhbnZpbm8iLCJlbWFpbCI6ImZyZG5uZHZuMTA2QGdtYWlsLmNvbSIsImlhdCI6MTU4NDc4OTIzNiwiZXhwIjoxNTg0ODc1NjM2fQ.RxRa7OaIHEz8NDx3PRxu1W0OYjSeIxTArtknXUr2A2A",
+								"description": "Change YOURTOKEN to generated token on Login Request."
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Comment to Post 1 Edited",
+									"description": "Your Edited Comment Content",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://nodejs-blog-exercise.herokuapp.com/api/post/:forPost/comments/:id",
+							"protocol": "http",
+							"host": [
+								"nodejs-blog-exercise",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"post",
+								":forPost",
+								"comments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "forPost",
+									"value": "5e75f744d550520017e7ff7f",
+									"description": "Post ID"
+								},
+								{
+									"key": "id",
+									"value": "5e75f8e5d550520017e7ff84",
+									"description": "Comment ID"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7056995f-32cb-4730-8441-3c31dd06b345",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "de2a446b-548a-4aa3-9a68-62ddaa2f4890",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
