@@ -104,106 +104,42 @@ npm run dev
 
 ##  API Documentation
 ### 1. Auth
-#### a. Register ####
 Request
 | Name           | Method | Descriptions                                          |
 |----------------|--------|-------------------------------------------------------|
 | /auth/register |  POST  | Register a new user and send OTP to new user's email. |
-
-
-#### b. Login ####
-Request
-| Name        | Method | Descriptions |
-|-------------|--------|--------------|
 | /auth/login |  POST  | User Login   |
-
-
-#### c. Verify OTP ####
-Request
-| Name             | Method | Descriptions            |
-|------------------|--------|-------------------------|
 | /auth/verify-otp |  POST  | Verify -digits OTP Code |
-
-
-#### d. Resend OTP ####
-Request
-| Name                    | Method | Descriptions                   |
-|-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
 
 ---
 
 ### 2. Public
-#### a. Show All Post
 Request
 | Name    | Method | Descriptions                       |
 |---------|--------|------------------------------------|
 | /public |   GET  | Show All Post created by all user. |
-
-
-#### b. Show All Comment Based On Specific Post
-Request
-| Name                  | Method | Descriptions                                               |
-|-----------------------|--------|------------------------------------------------------------|
 | /public/{id}/comments |   GET  | Show all comments created on a post identified by post id. |
 
 ---
 
 ### 3. Post CRUD
-#### a. Post List
-
 Request
 | Name  | Method | Descriptions                             |
 |-------|--------|------------------------------------------|
 | /post |   GET  | Get all post created by authorized user. |
-
-#### b. Post Store
-Request
-| Name  | Method | Descriptions                          |
-|-------|--------|---------------------------------------|
 | /post |  POST  | Create a new post by authorized user. |
-
-#### c. Post Detail
-Request
-| Name       | Method | Descriptions                                     |
-|------------|--------|--------------------------------------------------|
 | /post/{id} |   GET  | View a specific post created by authorized user. |
-
-#### d. Post Update
-Request
-| Name       | Method | Descriptions                                     |
-|------------|--------|--------------------------------------------------|
 | /post/{id} |   PUT  | Edit a specific post created by authorized user. |
-
-#### e. Post Delete
-Request
-| Name       | Method | Descriptions                                       |
-|------------|--------|----------------------------------------------------|
 | /post/{id} | DELETE | Delete a specific post created by authorized user. |
 
 ---
 
 ### 4. Comment CRUD
-#### a. Comment List
 Request
 | Name                | Method | Descriptions                 |
 |---------------------|--------|------------------------------|
 | /post/{id}/comments |   GET  | Show all comments on a post. |
-
-#### b. Comment Store
-Request
-| Name                | Method | Descriptions                                              |
-|---------------------|--------|-----------------------------------------------------------|
 | /post/{id}/comments |  POST  | Create a comment on a post (all logged in user can post). |
-
-#### c. Comment Update
-Request
-| Name                             | Method | Descriptions                         |
-|----------------------------------|--------|--------------------------------------|
 | /post/{id}/comments/{comment_id} | UPDATE | Delete a comment by authorized user. |
-
-#### d. Comment Delete
-Request
-| Name                             | Method | Descriptions                         |
-|----------------------------------|--------|--------------------------------------|
 | /post/{id}/comments/{comment_id} | DELETE | Delete a comment by authorized user. |
