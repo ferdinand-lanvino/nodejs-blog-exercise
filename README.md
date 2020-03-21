@@ -2,9 +2,9 @@
 
 RESTful API built with Node.js, Express.js, and MongoDB
 
-[API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
-[Heroku Endpoint](http://nodejs-blog-exercise.herokuapp.com/)
-
+-   [API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
+-   [Heroku Endpoint](http://nodejs-blog-exercise.herokuapp.com/)
+-   [Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
 
 ## Checklist
 ### Create API
@@ -95,7 +95,30 @@ npm install
 
 ### Environments Setup
 
-1.  Find `.env.example` on root directory of this project.
+1.  Find `.env.example` on root directory of this project. Here is .env example. 
+
+```
+# Example MongoDB Connection  
+# mongodb://127.0.0.1:27017/nodejs-blog-exercise
+# mongodb://[MongodbHost]:[PORT]/[DatabaseName]
+MONGODB_URL=mongodb://localhost:27017/nodejs-blog-exercise
+
+# Example Secret:-  abcdefghijklmnopqrstuvwxyz1234567890
+JWT_SECRET=abcdefghijklmnopqrstuvwxyz1234567890
+
+# Duration options available here: https://github.com/auth0/node-jsonwebtoken#usage
+# Search for "expiresIn" option
+JWT_TIMEOUT_DURATION=1d
+
+# Email configuration for sending OTP
+EMAIL_SMTP_HOST=smtp.ethereal.email
+EMAIL_SMTP_PORT=587
+EMAIL_SMTP_USERNAME=kiera94@ethereal.email
+EMAIL_SMTP_PASSWORD=r6DtQu9hrAczNzQ4gj
+# true for 465, false for other ports
+EMAIL_SMTP_SECURE=false
+```
+
 2.  Copy and paste `.env.example` and rename it to `.env`
 3.  Change the values to suit your environment.
 4.  SMTP Server needed for sending OTP, if you testing this API on localhost use setting below.
@@ -126,9 +149,9 @@ npm run dev
 
 ##  API Documentation
 
-[Full API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
+-   [Full API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
 
-[Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
+-   [Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
 
 ### 1. Auth
 Request
