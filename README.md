@@ -104,7 +104,6 @@ npm run dev
 
 ##  API Documentation
 ### 1. Auth
-***
 #### a. Register ####
 Request
 | Name           | Method | Descriptions                                          |
