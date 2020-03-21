@@ -2,9 +2,11 @@
 
 RESTful API built with Node.js, Express.js, and MongoDB
 
+[API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
+[Heroku Endpoint](http://nodejs-blog-exercise.herokuapp.com/)
+
 
 ## Checklist
-
 ### Create API
 - [x] Sign-In
 - [x] Sign-up with email-password validation
@@ -32,6 +34,12 @@ RESTful API built with Node.js, Express.js, and MongoDB
 ## Tools
 -   Visual Studio Code
 -   Postman (for API testing)
+
+## Testing Using Postman
+[Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
+1.   Copy this link (https://www.getpostman.com/collections/c71a62dcff3d698097bc)
+2.   Open Postman, click File > Import
+3.   Select import from link and paste in url field
 
 ## Project Structure
 ```sh
@@ -103,6 +111,11 @@ npm run dev
 
 
 ##  API Documentation
+
+[API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
+
+[Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
+
 ### 1. Auth
 Request
 | Name           | Method | Descriptions                                          |
