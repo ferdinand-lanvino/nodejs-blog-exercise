@@ -80,10 +80,10 @@ RESTful API built with Node.js, Express.js, and MongoDB
 
 ### Using Git
 
-1.  Clone this project from github/bitbucket.
+1.  Clone this project from Github.
 
 ```bash
-git clone 
+git clone https://github.com/ferdinand-lanvino/nodejs-blog-exercise
 ```
 
 ### Install npm dependencies
@@ -112,7 +112,7 @@ npm run dev
 
 ##  API Documentation
 
-[API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
+[Full API Documentations (Postman Generated)](https://documenter.getpostman.com/view/6431923/SzS7RSKZ)
 
 [Postman API Heroku Collections](https://www.getpostman.com/collections/c71a62dcff3d698097bc)
 
