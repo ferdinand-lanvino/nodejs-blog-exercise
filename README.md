@@ -101,7 +101,7 @@ npm run dev
 ```
 
 ##  API Documentation
-=============
+
 ### Auth
 
 #### Register
@@ -111,6 +111,7 @@ Request
 |----------------|--------|-------------------------------------------------------|
 | /auth/register |  POST  | Register a new user and send OTP to new user's email. |
 
+
 #### Login
 
 Request
@@ -119,20 +120,17 @@ Request
 | /auth/login |  POST  | User Login   |
 
 
-
-
 #### Verify OTP
 
-**Request**
-
+Request
 | Name             | Method | Descriptions            |
 |------------------|--------|-------------------------|
 | /auth/verify-otp |  POST  | Verify -digits OTP Code |
 
+
 #### Resend OTP
 
-**Request**
-
+Request
 | Name                    | Method | Descriptions                   |
 |-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
@@ -142,8 +140,7 @@ Request
 ### Public
 #### Show All Post
 
-**Request**
-
+Request
 | Name    | Method | Descriptions                       |
 |---------|--------|------------------------------------|
 | /public |   GET  | Show All Post created by all user. |
@@ -151,8 +148,7 @@ Request
 
 #### Show All Comment Based On Specific Post
 
-**Request**
-
+Request
 | Name                  | Method | Descriptions                                               |
 |-----------------------|--------|------------------------------------------------------------|
 | /public/{id}/comments |   GET  | Show all comments created on a post identified by post id. |
@@ -162,40 +158,35 @@ Request
 ### Post CRUD
 #### Post List
 
-**Request**
-
+Request
 | Name  | Method | Descriptions                             |
 |-------|--------|------------------------------------------|
 | /post |   GET  | Get all post created by authorized user. |
 
 #### Post Store
 
-**Request**
-
+Request
 | Name  | Method | Descriptions                          |
 |-------|--------|---------------------------------------|
 | /post |  POST  | Create a new post by authorized user. |
 
 #### Post Detail
 
-**Request**
-
+Request
 | Name       | Method | Descriptions                                     |
 |------------|--------|--------------------------------------------------|
 | /post/{id} |   GET  | View a specific post created by authorized user. |
 
 #### Post Update
 
-**Request**
-
+Request
 | Name       | Method | Descriptions                                     |
 |------------|--------|--------------------------------------------------|
 | /post/{id} |   PUT  | Edit a specific post created by authorized user. |
 
 #### Post Delete
 
-**Request**
-
+Request
 | Name       | Method | Descriptions                                       |
 |------------|--------|----------------------------------------------------|
 | /post/{id} | DELETE | Delete a specific post created by authorized user. |
@@ -205,32 +196,28 @@ Request
 ### Comment CRUD
 #### Comment List
 
-**Request**
-
+Request
 | Name                | Method | Descriptions                 |
 |---------------------|--------|------------------------------|
 | /post/{id}/comments |   GET  | Show all comments on a post. |
 
 #### Comment Store
 
-**Request**
-
+Request
 | Name                | Method | Descriptions                                              |
 |---------------------|--------|-----------------------------------------------------------|
 | /post/{id}/comments |  POST  | Create a comment on a post (all logged in user can post). |
 
 #### Comment Update
 
-**Request**
-
+Request
 | Name                             | Method | Descriptions                         |
 |----------------------------------|--------|--------------------------------------|
 | /post/{id}/comments/{comment_id} | update | Delete a comment by authorized user. |
 
 #### Comment Delete
 
-**Request**
-
+Request
 | Name                             | Method | Descriptions                         |
 |----------------------------------|--------|--------------------------------------|
 | /post/{id}/comments/{comment_id} | delete | Delete a comment by authorized user. |
