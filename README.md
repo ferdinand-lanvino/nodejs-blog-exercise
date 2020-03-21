@@ -104,10 +104,9 @@ npm run dev
 
 ##  API Documentation
 
-<details>
+<Auth>
+    
 ### Auth
-
-
 #### Register
 
 Request
@@ -139,7 +138,7 @@ Request
 |-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
 
-</details>
+</Auth>
 
 
 
