@@ -70,12 +70,12 @@ RESTful API built with Node.js, Express.js, and MongoDB
 
 ## How to install
 
-### Using Git (recommended)
+### Using Git
 
 1.  Clone this project from github/bitbucket.
 
 ```bash
-git clone  
+git clone 
 ```
 
 ### Install npm dependencies
