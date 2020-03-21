@@ -137,7 +137,7 @@ Request
 |-------------------------|--------|--------------------------------|
 | /auth/resend-verify-otp |  POST  | Resend OTP to specified Email. |
 
-
+---
 
 ### 2. Public
 #### Show All Post
@@ -155,7 +155,7 @@ Request
 |-----------------------|--------|------------------------------------------------------------|
 | /public/{id}/comments |   GET  | Show all comments created on a post identified by post id. |
 
-
+---
 
 ### 3. Post CRUD
 #### Post List
@@ -193,7 +193,7 @@ Request
 |------------|--------|----------------------------------------------------|
 | /post/{id} | DELETE | Delete a specific post created by authorized user. |
 
-
+---
 
 ### 4. Comment CRUD
 #### Comment List
