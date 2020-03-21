@@ -107,7 +107,7 @@ npm run dev
 ### 1. Auth
 #### Register ####
 
-```bash
+```
 Request
 | Name           | Method | Descriptions                                          |
 |----------------|--------|-------------------------------------------------------|
